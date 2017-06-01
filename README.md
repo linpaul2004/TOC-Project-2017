@@ -1,41 +1,45 @@
 # YuGiOh Bot on Telegram
 
-Source code for YuGiOh bot on Telegram
+遊戲王卡片查詢機器人
 
-A telegram bot based on a finite state machine
+基於 Finite State Machine 的 Telegram bot
 
-## Setup
+**必須使用Linux運行**
 
-### Prerequisite
+## 安裝
+
+### 必備環境
 * Python 3
 
-#### Install Dependency
+#### 安裝套件
 ```sh
 pip install -r requirements.txt
 ```
 
-* pygraphviz (For visualizing Finite State Machine)
+* pygraphviz (用來畫 Finite State Machine)
     * [Setup pygraphviz on Ubuntu](http://www.jianshu.com/p/a3da7ecc5303)
 
-### Secret Data
+### Bot 資訊
 
-`API_TOKEN` and `WEBHOOK_URL` in app.py **MUST** be set to proper values.
-Otherwise, you might not be able to run your code.
+請**務必**要把 app.py 中的 `API_TOKEN` (line 10 in app.py) 與 `WEBHOOK_URL` (line 11 in app.py) 改成正確的值
 
-### Run Locally
-You can either setup https server or using `ngrok` as a proxy.
+* `API_TOKEN` 是 Bot 的 token ， 請在 Telegram 跟 BotFather 取得
+* `WEBHOOK_URL` 是伺服器的網址，請**務必**使用 https 網址
 
-**`ngrok` would be used in the following instruction**
+### 本地端運行
+可以選擇自己架設 https 伺服器或使用 `ngrok` 來代理
+
+**在以下的說明中預設使用 `ngrok`**
 
 ```sh
 ngrok http 5000
 ```
 
-After that, `ngrok` would generate a https URL.
+之後， `ngrok` 會產生一個 https 的網址
 
-You should set `WEBHOOK_URL` (in app.py) to `your-https-URL/hook`.
+將 `WEBHOOK_URL` (app.py 中) 設為 `your-https-URL/hook`.
 
-#### Run the sever
+#### 執行伺服器
 
 ```sh
 python3 app.py
@@ -44,7 +48,7 @@ python3 app.py
 ## Finite State Machine
 ![fsm](./img/show-fsm.png)
 
-## Usage
+## 用法
 一開始的state設在 `initial`
 
 功能：
@@ -91,5 +95,5 @@ python3 app.py
 		* Input:`83764718`
 		* ![image](http://cdn.asia.xpg.cards/card-image/ST17/JP022/fd5781eb-64e4-41c4-ab88-bc1a374fd4e0200X282.jpg?v=1)
 
-## Author
+## 作者
 [林偉哲](https://github.com/linpaul2004)
