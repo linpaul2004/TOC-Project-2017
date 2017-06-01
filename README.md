@@ -1,6 +1,6 @@
-# TOC Project 2017
+# YuGiOh Bot on Telegram
 
-Template Code for TOC Project 2017
+Source code for YuGiOh bot on Telegram
 
 A telegram bot based on a finite state machine
 
@@ -45,17 +45,51 @@ python3 app.py
 ![fsm](./img/show-fsm.png)
 
 ## Usage
-The initial state is set to `user`.
+一開始的state設在 `initial`.
 
-Every time `user` state is triggered to `advance` to another state, it will `go_back` to `user` state after the bot replies corresponding message.
+功能：
 
-* user
-	* Input: "go to state1"
-		* Reply: "I'm entering state1"
+1. 找中文卡片→輸入卡號
+2. 找日文卡片→輸入日文卡名
+3. 查卡圖→/image
+4. 找推薦牌組→/deck
+5. 用法→/help
+6. 最新禁卡表→/limit"
 
-	* Input: "go to state2"
-		* Reply: "I'm entering state2"
+----------
 
+* byNum
+	* 輸入卡號
+	* Input:`55144522` 
+	* 《強欲之壺》
+	* 通常魔法
+	* 我方抽2張牌。
+* byName
+	* 輸入日文卡名
+	* Input:`死者蘇生`
+	* 《死者蘇生》
+	* 通常魔法（制限カード）
+	* (1)：自分または相手の墓地のモンスター１体を対象として発動できる。
+そのモンスターを自分フィールドに特殊召喚する。
+* deck
+	* Input:`/deck`
+	* 要組特定牌組→輸入關鍵字
+	* 推薦主流牌組→/recommend
+		* Input:`封印`
+		* 找全部牌組→/all
+		* 找比賽牌組→/race
+		* 找非比賽牌組→/norace
+* help
+	* Input:`/help`
+	* 顯示使用說明
+* limit
+	* Input:`/limit`
+	* 回覆最新版禁卡表
+* image
+	* Input:`/image`
+	* 請輸入卡號
+		* Input:`83764718`
+		* ![image](http://cdn.asia.xpg.cards/card-image/ST17/JP022/fd5781eb-64e4-41c4-ab88-bc1a374fd4e0200X282.jpg?v=1)
 
 ## Author
-[Lee-W](https://github.com/Lee-W)
+[林偉哲](https://github.com/linpaul2004)
