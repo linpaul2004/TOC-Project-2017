@@ -45,7 +45,7 @@ python3 app.py
 ![fsm](./img/show-fsm.png)
 
 ## Usage
-一開始的state設在 `initial`.
+一開始的state設在 `initial`
 
 功能：
 
@@ -54,7 +54,7 @@ python3 app.py
 3. 查卡圖→/image
 4. 找推薦牌組→/deck
 5. 用法→/help
-6. 最新禁卡表→/limit"
+6. 最新禁卡表→/limit
 
 ----------
 
